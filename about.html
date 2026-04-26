@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MediCare Solutions | Our Mission & Values</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0047AB;
+            --primary-light: #E3F2FD;
+            --text-dark: #0F172A;
+            --text-gray: #64748B;
+            --bg-light: #F8FAFC;
+            --white: #ffffff;
+            --border: #E2E8F0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { color: var(--text-dark); line-height: 1.6; background-color: var(--white); }
+
+        /* Navigation */
+        header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 8%; background: var(--white);
+            position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border);
+        }
+        .logo { color: var(--primary); font-weight: 700; font-size: 1.25rem; display: flex; align-items: center; gap: 8px; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 2.5rem; }
+        nav ul li a { text-decoration: none; color: var(--text-gray); font-size: 0.95rem; font-weight: 500; }
+        nav ul li a.active { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 5px; }
+
+        /* Hero Section */
+        .about-hero { padding: 80px 8% 40px; text-align: center; }
+        .about-hero h1 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .about-hero p { max-width: 800px; margin: 0 auto; color: var(--text-gray); font-size: 1.1rem; }
+
+        /* Mission & Vision Cards */
+        .mission-vision { padding: 60px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .mv-card { padding: 50px; border-radius: 16px; background: #F0F7FF; border: 1px solid #E3F2FD; }
+        .mv-card.vision { background: #F8FAFC; border: 1px solid #F1F5F9; }
+        .icon-box { width: 48px; height: 48px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; color: white; }
+        .blue-icon { background: var(--primary); }
+        .dark-icon { background: #334155; }
+        .mv-card h2 { margin-bottom: 15px; font-size: 1.8rem; }
+
+        /* Core Values */
+        .section-header { text-align: center; padding: 100px 8% 60px; }
+        .values-grid { padding: 0 8% 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .value-card { padding: 40px; border: 1px solid var(--border); border-radius: 12px; transition: 0.3s; }
+        .value-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .value-icon { width: 40px; height: 40px; background: var(--primary-light); color: var(--primary); border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+
+        /* Timeline / Journey */
+        .journey-section { padding: 100px 8%; background: var(--white); }
+        .timeline { position: relative; max-width: 1000px; margin: 50px auto; padding: 40px 0; }
+        .timeline::after { content: ''; position: absolute; width: 2px; background: var(--primary-light); top: 0; bottom: 0; left: 50%; margin-left: -1px; }
+        
+        .container { padding: 10px 40px; position: relative; width: 50%; }
+        .container::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: var(--white); border: 4px solid var(--primary); top: 15px; border-radius: 50%; z-index: 1; }
+        .left { left: 0; }
+        .right { left: 50%; }
+        .right::after { left: -10px; }
+        
+        .content { padding: 30px; background: var(--white); border: 1px solid var(--border); border-radius: 12px; position: relative; }
+        .year-badge { background: var(--primary); color: white; padding: 4px 15px; border-radius: 20px; font-weight: 600; font-size: 0.8rem; position: absolute; top: -12px; }
+        .left .year-badge { right: 20px; }
+        .right .year-badge { left: 20px; }
+
+        /* Team Stats Banner */
+        .team-banner { background: var(--primary); color: white; padding: 100px 8%; text-align: center; }
+        .team-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+        .stat-box h2 { font-size: 3rem; margin-bottom: 10px; }
+        .stat-box p { font-size: 0.9rem; opacity: 0.9; }
+
+        /* Footer */
+        footer { padding: 80px 8%; background: var(--white); border-top: 1px solid var(--border); display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 50px; }
+        .footer-logo { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
+        footer h4 { margin-bottom: 20px; }
+        footer p, footer li { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 10px; list-style: none; }
+
+        @media (max-width: 768px) {
+            .mission-vision, .values-grid, .team-stats, footer { grid-template-columns: 1fr; }
+            .timeline::after { left: 31px; }
+            .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .container::after { left: 21px; }
+            .right { left: 0%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">✚ MediCare Solutions</a>
+    
+    <!-- New Hamburger Button -->
+    <div class="menu-btn" id="menuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="navMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="insights.html">Insights</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="about-hero">
+    <h1>About MediCare Solutions</h1>
+    <p>We are a global pharmaceutical company dedicated to discovering, developing, and delivering innovative medicines that transform lives.</p>
+</section>
+
+<section class="mission-vision">
+    <div class="mv-card">
+        <div class="icon-box blue-icon">🎯</div>
+        <h2>Our Mission</h2>
+        <p>To advance healthcare by developing breakthrough pharmaceutical therapies that address critical unmet medical needs and improve patient outcomes worldwide.</p>
+    </div>
+    <div class="mv-card vision">
+        <div class="icon-box dark-icon">👁️</div>
+        <h2>Our Vision</h2>
+        <p>To be the world's most trusted pharmaceutical innovator, recognized for scientific excellence and our unwavering commitment to patient care and global health equity.</p>
+    </div>
+</section>
+
+<section class="section-header">
+    <h2>Our Core Values</h2>
+    <p style="color: var(--text-gray); max-width: 600px; margin: 20px auto 0;">These principles guide everything we do, from research and development to patient care and community engagement.</p>
+</section>
+
+<section class="values-grid">
+    <div class="value-card">
+        <div class="value-icon">🧬</div>
+        <h3>Innovation</h3>
+        <p style="color: var(--text-gray); margin-top: 10px;">We push the boundaries of scientific discovery to develop novel therapies that address unmet medical needs.</p>
+    </div>
+    <div class="value-card">
+        <div class="value-icon">👥</div>
+        <h3>Patient-Centric</h3>
+        <p style="color: var(--text-gray); margin-top: 10px;">Every decision we make is guided by our commitment to improving patient outcomes and quality of life.</p>
+    </div>
+    <div class="value-card">
+        <div class="value-icon">🏅</div>
+        <h3>Excellence</h3>
+        <p style="color: var(--text-gray); margin-top: 10px;">We maintain the highest standards of quality, safety, and efficacy in all our research and development activities.</p>
+    </div>
+    <div class="value-card">
+        <div class="value-icon">⚖️</div>
+        <h3>Integrity</h3>
+        <p style="color: var(--text-gray); margin-top: 10px;">We conduct our business with transparency, ethical practices, and unwavering commitment to regulatory compliance.</p>
+    </div>
+</section>
+
+<section class="journey-section">
+    <div style="text-align: center;">
+        <h2>Our Journey</h2>
+        <p style="color: var(--text-gray); margin-top: 10px;">Over two decades of pharmaceutical innovation and patient care excellence</p>
+    </div>
+
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <span class="year-badge">2000</span>
+                <p>Founded with a vision to revolutionize pharmaceutical research</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <span class="year-badge">2005</span>
+                <p>First FDA-approved treatment for autoimmune disorders</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <span class="year-badge">2012</span>
+                <p>Expanded global presence to 50+ countries</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="team-banner">
+    <h2>Our Team</h2>
+    <p>We are a diverse team of scientists, researchers, and healthcare professionals united by a common purpose: advancing human health through pharmaceutical innovation.</p>
+    
+    <div class="team-stats">
+        <div class="stat-box"><h2>500+</h2><p>Research Scientists</p></div>
+        <div class="stat-box"><h2>1,200+</h2><p>Total Employees</p></div>
+        <div class="stat-box"><h2>30+</h2><p>Countries Represented</p></div>
+    </div>
+</section>
+
+<footer>
+    <div>
+        <div class="footer-logo">✚ MediCare Solutions</div>
+        <p>Pioneering pharmaceutical innovation to improve patient outcomes and advance healthcare worldwide.</p>
+    </div>
+    <div>
+        <h4>Quick Links</h4>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Insights</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <div>
+        <h4>Contact</h4>
+        <p>info@medicare-solutions.com</p>
+        <p>+1 (555) 123-4567</p>
+        <p>123 Healthcare Ave, Boston, MA 02101</p>
+    </div>
+</footer>
+<script>
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    menuBtn.addEventListener('click', () => {
+        // Toggle the 'active' class on the menu
+        navMenu.classList.toggle('active');
+        
+        // Optional: Animate hamburger to an 'X'
+        const spans = menuBtn.querySelectorAll('span');
+        spans[0].style.transform = navMenu.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : '';
+        spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
+        spans[2].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(6px, -5px)' : '';
+    });
+</script>
+</body>
+</html>
